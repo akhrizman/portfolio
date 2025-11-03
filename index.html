@@ -11,58 +11,58 @@
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
+.w3-sidebar {width: 120px;background: "dark-grey";}
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
 </head>
-<body class="w3-black">
+<body class="w3-sand">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
   <img src="https://drive.google.com/thumbnail?id=1hsByba6zO4MZkzuJDvT4P2VsKkiJvZ2T" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-dark-grey">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-dark-grey">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
   </a>
-  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-dark-grey">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>PROJECTS</p>
   </a>
-  <a href="#links" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#links" class="w3-bar-item w3-button w3-padding-large w3-hover-dark-grey">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>LINKS</p>
   </a>
-<!--  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+ <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-dark-grey">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>CONTACT</p>
-  </a> -->
+  </a>
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+  <div class="w3-bar w3-dark-grey w3-opacity w3-hover-opacity-off w3-center w3-small">
     <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
     <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
     <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
     <a href="#links" class="w3-bar-item w3-button" style="width:25% !important">LINKS</a>
-<!--    <a href="#contact" class="w3-bar-item w3-button" style="width:20% !important">CONTACT</a> -->
+   <!-- <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a> -->
   </div>
 </div>
 
 <!-- Page Content -->
-<div class="w3-padding-large" id="main">
+<div class="w3-padding-large w3-dark-grey w3-text-sand" id="main">
   <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+  <header class="w3-container w3-padding-32 w3-center" id="home">
     <h1 class="w3-jumbo">Alex Khrizman</h1>
-    <p>Father <br>
+    <p class='w3-text-sand'>Father <br>
        Husband <br>
        Software Engineer <br>
        Boardgame Evangelist
@@ -71,83 +71,68 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </header>
 
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">About Me</h2>
+  <div class="w3-content w3-justify w3-text-sand w3-padding-64" id="about">
+    <h2>About Me</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>I became a technologist in 2017 after attending an up-and-coming web development coding bootcamp in Columbus Ohio.  The amazing experience opened many doors both professionally and personally.  Before that, I was walking around a nuclear plant with a clipboard.  Before that, I was an organic bench chemist.  Both careers gave me a tremendous appreciation for interesting technical problems that I'm tasked with solving nowadays.</p>
 		<p>I currently live in Monmouth County, New Jersey with my wife and two children.  When I'm not working, I'm usually spending time with them, fixing something around the house, or having people over in my dungeon (yeah, you read it right).  My favorite hobby and passion are board games.  So much so that I'm an evangelist for the hobby.  I like to call our basement the dungeon, which has 2 walls of board games, and anywhere between 3-5 large tables (depending on if I'm having a game day).  Ever since I fell in love with the hobby in 2015, I've been playing, studying, teaching games and even prototyping some of my own.</p>
-		<p>In early 2021, I decided to leave a dead end job and pursue my own projects. I converted a spreadsheet of my boardgames into an interactive website so friends could search my collection and decide on what to play.  I also built an updater that would collect relevent game data from BoardGameGeek.com and a feature that lets me easily manage the collection.  In those 3 months, I grew tremendously as an engineer while making it easier for me to share the hobby.  Feedback is always welcome!</p>
-    <h3 class="w3-padding-16 w3-text-light-grey">Skills</h3>
+		<p>In early 2021, I decided to leave a dead end job and pursue my own projects. I converted a spreadsheet of my boardgames into an interactive web tool called "Play My Games" so friends could search my collection and decide on what to play.  I also built an updater that would collect relevent game data from BoardGameGeek.com and a feature that lets me easily manage the collection.  In those 3 months, I grew tremendously as an engineer while making it easier for me to share the hobby.  Since then it has evolved into a mobile-first responsive website that I continue to maintain and add features.  Feedback is always welcome!</p>
+		<br>
+		<h3 class="w3-padding-16 w3-text-sand">Tech Skills</h3>
     <p class="w3-wide nowrap">Java • Python • Golang</p>
     <p class="w3-wide nowrap">SQL • AWS • Git • Agile</p>
     <p class="w3-wide nowrap">Cucumber • Selenium</p>
     <p class="w3-wide nowrap">JSP • jQuery • GoHTML</p>
-    <p class="w3-wide nowrap">Spring MVC/Boot/Web/Data</p>
+    <p class="w3-wide nowrap">Spring Boot/Web/MVC/JPA</p>
     <p class="w3-wide nowrap">Docker • Nginx • Tomcat </p>
     <p class="w3-wide nowrap">JavaScript • HTML • CSS</p>
     <br>
-
-    <button class="w3-button w3-light-grey w3-padding-large w3-section" href="#" onclick="downloadResume()">
-<!--      <i class="fa fa-download"></i><a href="/files/Khrizman_11-2024.pdf" download style="text-decoration: none">Download Resume</a> -->
-      <i class="fa fa-download"></i> Download Resume
-    </button>
-  <!-- End About Section -->
   </div>
   	
+		
   <!-- Projects Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="projects">
-    <h2 class="w3-text-light-grey">Passion Projects</h2>
+  <div class="w3-content w3-justify w3-text-sand w3-padding-64" id="projects">
+    <h2 >Passion Projects</h2>
     <hr style="width:200px" class="w3-opacity">
 	<h4 class="w3-wide">Boardgame <span class="nowrap">Database Updater</span></h4>
 	<p>As a board game collector, I used to keep all of my games and relevant details in an excel spreadsheet. Eventually, that turned into a relational database. My first solo project was to created a python script to access BoardGameGeek's xml API and keep my database up to date with descriptions, user ratings, player counts, etc. (Actually, it started as a web scraper, but that was before I knew how to interact with apis). Finally, it evolved into a Flask App with APIs that automatically update games in my library with data from BoardGameGeek, typically triggered when I add a new game to my library.
 	</p>
 	<br>
-	<h4 class="w3-wide">Play My Games</h4>
+	<h4 class="w3-wide">Wall of Games</h4>
 	<p>As a promoter of the hobby I often found myself standing in front of a wall of games with new friends trying to figure out what to play. BoardGameGeek.com allows users to create lists of games, but every game would   have to be input one by one.  With over 200 games, the desire to have full   control over my collection, and seeing an opportunity to build, deploy and maintain my first web app completely from scratch, I got to coding.  I now   maintain a SpringBoot app that provides friends a quick way to search my collection. It uses the same database I already had and provides a non-public feature that I regularly use to add, view, and update games in my library. The backend is built on Spring Boot, Spring Web, & Spring Data. The frontend is generated with JSP templates, HMTL, CSS, and vanilla JavaScript.</p>
 	<br>
 	<h4 class="w3-wide">Patient Ledger</h4>
 	<p>This was a small app I designed for a physician who needed a simple solution to keep track of their billings and notes. It was coded in such a way that it would not save any identiying patient information, while allowing the user to quickly record a patient visit by inputting a patient's initials, age, date, and general category of visit (in-patient, out-patient, or testing). The physician could then view all their visits and mark them as billed and/or completed. The coolest part about this project was that I played the role of Project Manager, Business Analyst, and Developer, and followed an agile process to deliver a fully functional MVP in about 10 days (See Git Hub). It was used for about a year and a half, and was taken down once the physician's office finally switched to using electronic medical records.</p>
     <br>
-  <!-- End Projects Section -->
   </div>	
 	
 
   <!-- Links Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="links">
-    <h2 class="w3-text-light-grey">Links</h2>
+  <div class="w3-content w3-justify w3-text-sand w3-padding-64" id="links">
+    <h2 class="w3-text-light-dark-grey">Links</h2>
     <hr style="width:200px" class="w3-opacity">
-		<p class="w3-wide"><a href="https://www.wallofgames.com" target="_blank" class="w3-hover-text-green">Play My Games</a></p>
+		<p class="w3-wide"><a href="https://www.wallofgames.com" target="_blank" class="w3-hover-text-green">Wall of Games</a></p>
 		<p class="w3-wide"><a href="https://www.github.com/akhrizman" target="_blank" class="w3-hover-text-green">GitHub</a></p>
 		<p class="w3-wide"><a href="https://www.linkedin.com/in/akhrizman/" target="_blank" class="w3-hover-text-green">LinkedIn</a></p>
 		<p class="w3-wide"><a href="https://boardgamegeek.com/user/shulyah" target="_blank" class="w3-hover-text-green">BoardGameGeek</a></p>
-  <!-- End Links Section -->
   </div>	
 
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact" style="display: none;">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
+	<!-- Contact Section -->
+	<div class="w3-content w3-text-sand w3-padding-64" id="contact">
+	  <h2 class="w3-text-light-dark-grey">Contact Me</h2>
+	  <hr style="width:200px" class="w3-opacity">
 
-    <p>Let's get in touch. Send me a message:</p>
+	  <p>If you'd like to get in touch, just send me an email:</p>
+	  <p>
+	    <a href="mailto:a.khrizman@gmail.com" class="w3-button w3-light-dark-grey w3-padding-large">
+	      <i class="fa fa-envelope"></i> Email Me
+	    </a>
+	  </p>
+	</div>
 
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
-  
     <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+  <footer class="w3-content w3-padding-64 w3-text-sand w3-xlarge">
     <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
   </footer>
 
 <!-- END PAGE CONTENT -->
@@ -162,12 +147,40 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 }
 </style>
 
-<script>
+<!-- <script>
     function downloadResume() {
-      const fileUrl = '/files/Khrizman_11-2024.pdf';
+      const fileUrl = '/files/placeholder.pdf';
       const uniqueUrl = fileUrl + '?nocache=' + new Date().getTime();
       window.location.href = uniqueUrl;
     }
+</script> -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("div[id], header[id]");
+  const navLinks = document.querySelectorAll(".w3-sidebar a");
+
+  function activateSection() {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("w3-dark-grey");
+      const href = link.getAttribute("href");
+      if (href === `#${current}` || (href === "#" && current === "home")) {
+        link.classList.add("w3-dark-grey");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateSection);
+});
 </script>
 
 </html>
