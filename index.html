@@ -74,11 +74,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-content w3-justify w3-text-sand w3-padding-64" id="about">
     <h2>About Me</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>I became a technologist in 2017 after attending an up-and-coming web development coding bootcamp in Columbus Ohio.  The amazing experience opened many doors both professionally and personally.  Before that, I was walking around a nuclear plant with a clipboard.  Before that, I was an organic bench chemist.  Both careers gave me a tremendous appreciation for interesting technical problems that I'm tasked with solving nowadays.</p>
-		<p>I currently live in Monmouth County, New Jersey with my wife and two children.  When I'm not working, I'm usually spending time with them, fixing something around the house, or having people over in my dungeon (yeah, you read it right).  My favorite hobby and passion are board games.  So much so that I'm an evangelist for the hobby.  I like to call our basement the dungeon, which has 2 walls of board games, and anywhere between 3-5 large tables (depending on if I'm having a game day).  Ever since I fell in love with the hobby in 2015, I've been playing, studying, teaching games and even prototyping some of my own.</p>
-		<p>In early 2021, I decided to leave a dead end job and pursue my own projects. I converted a spreadsheet of my boardgames into an interactive web tool called "Play My Games" so friends could search my collection and decide on what to play.  I also built an updater that would collect relevent game data from BoardGameGeek.com and a feature that lets me easily manage the collection.  In those 3 months, I grew tremendously as an engineer while making it easier for me to share the hobby.  Since then it has evolved into a mobile-first responsive website that I continue to maintain and add features.  Feedback is always welcome!</p>
+    <p data-lpkey="aboutText"></p>
 		<br>
-		<h3 class="w3-padding-16 w3-text-sand">Tech Skills</h3>
+	<h3 class="w3-padding-16 w3-text-sand">Tech Skills</h3>
     <p class="w3-wide nowrap">Java • Python • Golang</p>
     <p class="w3-wide nowrap">SQL • AWS • Git • Agile</p>
     <p class="w3-wide nowrap">Cucumber • Selenium</p>
@@ -95,14 +93,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <h2 >Passion Projects</h2>
     <hr style="width:200px" class="w3-opacity">
 	<h4 class="w3-wide">Boardgame <span class="nowrap">Database Updater</span></h4>
-	<p>As a board game collector, I used to keep all of my games and relevant details in an excel spreadsheet. Eventually, that turned into a relational database. My first solo project was to created a python script to access BoardGameGeek's xml API and keep my database up to date with descriptions, user ratings, player counts, etc. (Actually, it started as a web scraper, but that was before I knew how to interact with apis). Finally, it evolved into a Flask App with APIs that automatically update games in my library with data from BoardGameGeek, typically triggered when I add a new game to my library.
-	</p>
+	<p data-lpkey="bgdbUpdaterText"></p>
 	<br>
 	<h4 class="w3-wide">Wall of Games</h4>
-	<p>As a promoter of the hobby I often found myself standing in front of a wall of games with new friends trying to figure out what to play. BoardGameGeek.com allows users to create lists of games, but every game would   have to be input one by one.  With over 200 games, the desire to have full   control over my collection, and seeing an opportunity to build, deploy and maintain my first web app completely from scratch, I got to coding.  I now   maintain a SpringBoot app that provides friends a quick way to search my collection. It uses the same database I already had and provides a non-public feature that I regularly use to add, view, and update games in my library. The backend is built on Spring Boot, Spring Web, & Spring Data. The frontend is generated with JSP templates, HMTL, CSS, and vanilla JavaScript.</p>
+	<p data-lpkey="wallOfGamesText"></p>
 	<br>
 	<h4 class="w3-wide">Patient Ledger</h4>
-	<p>This was a small app I designed for a physician who needed a simple solution to keep track of their billings and notes. It was coded in such a way that it would not save any identiying patient information, while allowing the user to quickly record a patient visit by inputting a patient's initials, age, date, and general category of visit (in-patient, out-patient, or testing). The physician could then view all their visits and mark them as billed and/or completed. The coolest part about this project was that I played the role of Project Manager, Business Analyst, and Developer, and followed an agile process to deliver a fully functional MVP in about 10 days (See Git Hub). It was used for about a year and a half, and was taken down once the physician's office finally switched to using electronic medical records.</p>
+	<p data-lpkey="patientLedgerText"></p>
     <br>
   </div>	
 	
@@ -154,8 +151,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     }
 </script> -->
 
-<script>
+<script>	
 document.addEventListener("DOMContentLoaded", function () {
+  applyPageText();
+	
   const sections = document.querySelectorAll("div[id], header[id]");
   const navLinks = document.querySelectorAll(".w3-sidebar a");
 
@@ -180,6 +179,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", activateSection);
 });
+
+function applyPageText() {
+	console.log("Applying Page Text");
+    const url = 'https://www.wallofgames.com/site/languagemap?page=profilePage';
+
+    fetch(url, {
+        method: 'GET',
+        mode: 'cors',            // Request CORS
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Language load failed: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(languageMap => {
+        // Loop through all elements with a data-lpkey attribute
+        document.querySelectorAll('[data-lpkey]').forEach(element => {
+            const type = element.dataset.lpkey;
+            if (languageMap[type]) {
+                console.log(languageMap[type]);
+                element.innerHTML = languageMap[type];
+            }
+        });
+    })
+    .catch(error => {
+        console.error(error);
+    });
+}
+
 </script>
 
 </html>
